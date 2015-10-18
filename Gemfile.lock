@@ -18,9 +18,6 @@ GEM
     builder (3.2.2)
     coderay (1.1.0)
     diff-lcs (1.2.5)
-    fuubar (2.0.0)
-      rspec (~> 3.0)
-      ruby-progressbar (~> 1.4)
     i18n (0.7.0)
     json (1.8.3)
     method_source (0.8.2)
@@ -43,7 +40,6 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.3.0)
     rspec-support (3.3.0)
-    ruby-progressbar (1.7.5)
     slop (3.6.0)
     thor (0.19.1)
     thread_safe (0.3.5)
@@ -55,7 +51,6 @@ PLATFORMS
 
 DEPENDENCIES
   activemodel (~> 4.1)
-  fuubar (~> 2.0.0)
   pry (~> 0.10.3)
   rake (~> 10.4.2)
   rspec (~> 3.3.0)

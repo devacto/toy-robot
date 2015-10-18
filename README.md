@@ -14,7 +14,10 @@ Toy robot simulation in Ruby. For the Golang version see grobot.
 * `./bin/trobot -f test-data/test-03.command`
 
 ## Testing
-* RSpec for tests.
+
+`rake` runs all unit tests
+
+* RSpec for tests
 * SimpleCov for code test coverage.
 * Code Climate for code quality metrics.
 * Reek for code smell.

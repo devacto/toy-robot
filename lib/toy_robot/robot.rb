@@ -7,21 +7,34 @@ module ToyRobot
     BOARD_SIZE = 5
 
     def place(x, y, dir)
-      self.x = x
-      self.y = y
-      self.direction = dir.downcase.to_sym
+      @x = x
+      @y = y
+      @direction = dir.downcase.to_sym
     end
 
     def left
-      case self.direction
+      case @direction
         when :north
-          self.direction = :west
+          @direction = :west
         when :west
-          self.direction = :south
+          @direction = :south
         when :south
-          self.direction = :east
+          @direction = :east
         when :east
-          self.direction = :north
+          @direction = :north
+      end
+    end
+
+    def right
+      case @direction
+        when :north
+          @direction = :east
+        when :east
+          @direction = :south
+        when :south
+          @direction = :west
+        when :west
+          @direction = :north
       end
     end
 

@@ -44,27 +44,27 @@ REPORT
 * Provide test data to exercise the application.
 
 ### Constraints
-The toy robot must not fall off the table during movement. This also includes the initial placement of the toy robot.
-Any move that would cause the robot to fall must be ignored.
+* The toy robot must not fall off the table during movement. This also includes the initial placement of the toy robot.
+* Any move that would cause the robot to fall must be ignored.
 
 ### Example Input and Output
-a)
+test-01.command
 ```
 PLACE 0,0,NORTH
 MOVE
 REPORT
 ```
-Output: 0,1,NORTH
+Output: `0,1,NORTH`
 
-b)
+test-02.command
 ```
 PLACE 0,0,NORTH
 LEFT
 REPORT
 ```
-Output: 0,0,WEST
+Output: `0,0,WEST`
 
-c)
+test-03.command
 ```
 PLACE 1,2,EAST
 MOVE
@@ -73,7 +73,7 @@ LEFT
 MOVE
 REPORT
 ```
-Output: 3,3,NORTH
+Output: `3,3,NORTH`
 
 ### Deliverables
 The source files, the test data and any test code.

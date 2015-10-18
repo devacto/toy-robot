@@ -3,9 +3,32 @@ require 'thor'
 module ToyRobot
   module Cli
     class Application < Thor
-      desc 'hello NAME', 'Display greeting with given NAME'
-      def hello(name)
-        puts "Hello #{name}"
+
+      attr_accessor :application
+
+      desc 'execute robot commands', 'moves robot on a board as per commands'
+
+      method_option :file, type: :string, aliases: '-f',
+                    desc: 'name of file containing robot instructions'
+
+      def execute
+        read_from_file(options[:file])
+      end
+
+      default_task :execute
+
+      no_tasks do
+
+        def read_from_file(filename)
+          begin
+            File.readlines(filename).map do |line|
+              puts line
+            end
+          rescue Exception => e
+            puts "Filename not specified or does not exist."
+          end
+        end
+
       end
     end
   end

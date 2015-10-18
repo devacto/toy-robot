@@ -6,7 +6,7 @@ module ToyRobot
 
       attr_accessor :application
 
-      desc 'execute robot commands', 'moves robot on a board as per commands'
+      desc '-f path/to/file', 'moves robot on a board as per commands'
 
       method_option :file, type: :string, aliases: '-f',
                     desc: 'name of file containing robot instructions'

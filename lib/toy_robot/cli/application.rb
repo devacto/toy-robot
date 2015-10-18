@@ -1,5 +1,7 @@
 require 'thor'
 
+require 'application'
+
 module ToyRobot
   module Cli
     class Application < Thor
@@ -12,7 +14,9 @@ module ToyRobot
                     desc: 'name of file containing robot instructions'
 
       def execute
-        read_from_file(options[:file])
+        @application = ToyRobot::Application.new
+        instructions = read_from_file(options[:file])
+        @application.parse(instructions)
       end
 
       default_task :execute
@@ -21,15 +25,14 @@ module ToyRobot
 
         def read_from_file(filename)
           begin
-            File.readlines(filename).map do |line|
-              puts line
-            end
-          rescue Exception => e
-            puts "Filename not specified or does not exist."
+            File.readlines(filename)
           end
+        rescue Exception => e
+          puts "Filename not specified or does not exist."
+          puts e.message
         end
-
       end
+
     end
   end
 end

@@ -8,6 +8,11 @@ Toy robot simulation in Ruby. For the Golang version see grobot.
 * If it does not see a `REPORT` and has reached the end of the file, it will display output.
 * Start by reading a `PLACE` command. If can't find it, will exit straight away.
 
+### Try using test inputs
+* `trobot -f test-data/test-01.command`
+* `trobot -f test-data/test-02.command`
+* `trobot -f test-data/test-03.command`
+
 ## Testing
 * RSpec for tests.
 * SimpleCov for code test coverage.
@@ -48,7 +53,6 @@ REPORT
 * Any move that would cause the robot to fall must be ignored.
 
 ### Example Input and Output
-test-01.command
 ```
 PLACE 0,0,NORTH
 MOVE
@@ -56,7 +60,6 @@ REPORT
 ```
 Output: `0,1,NORTH`
 
-test-02.command
 ```
 PLACE 0,0,NORTH
 LEFT
@@ -64,7 +67,6 @@ REPORT
 ```
 Output: `0,0,WEST`
 
-test-03.command
 ```
 PLACE 1,2,EAST
 MOVE

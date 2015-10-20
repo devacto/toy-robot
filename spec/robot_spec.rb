@@ -146,4 +146,92 @@ describe Robot do
 
   end
 
+  describe '#move' do
+
+    context 'currently facing west' do
+
+      before do
+        @robot = Robot.new
+        @robot.place(2, 2, 'WEST')
+        @robot.move
+      end
+
+      it 'x coordinate decreases by 1' do
+        expect(@robot.x).to eq 1
+      end
+
+      it 'y coordinate remains the same' do
+        expect(@robot.y).to eq 2
+      end
+
+      it 'direction remains the same' do
+        expect(@robot.direction).to eq :west
+      end
+    end
+
+    context 'currently facing east' do
+
+      before do
+        @robot = Robot.new
+        @robot.place(2, 2, 'EAST')
+        @robot.move
+      end
+
+      it 'x coordinate increases by 1' do
+        expect(@robot.x).to eq 3
+      end
+
+      it 'y coordinate remains the same' do
+        expect(@robot.y).to eq 2
+      end
+
+      it 'direction remains the same' do
+        expect(@robot.direction).to eq :east
+      end
+    end
+
+    context 'currently facing north' do
+
+      before do
+        @robot = Robot.new
+        @robot.place(2, 2, 'NORTH')
+        @robot.move
+      end
+
+      it 'x coordinate remains the same' do
+        expect(@robot.x).to eq 2
+      end
+
+      it 'y coordinate increases by 1' do
+        expect(@robot.y).to eq 3
+      end
+
+      it 'direction remains the same' do
+        expect(@robot.direction).to eq :north
+      end
+    end
+
+    context 'currently facing south' do
+
+      before do
+        @robot = Robot.new
+        @robot.place(2, 2, 'SOUTH')
+        @robot.move
+      end
+
+      it 'x coordinate remains the same' do
+        expect(@robot.x).to eq 2
+      end
+
+      it 'y coordinate decreases by 1' do
+        expect(@robot.y).to eq 1
+      end
+
+      it 'direction remains the same' do
+        expect(@robot.direction).to eq :south
+      end
+    end
+
+  end
+
 end

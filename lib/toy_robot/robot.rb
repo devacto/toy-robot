@@ -38,5 +38,18 @@ module ToyRobot
       end
     end
 
+    def move
+      case @direction
+        when :west
+          @x = @x - 1
+        when :east
+          @x = @x + 1
+        when :north
+          @y = @y + 1
+        when :south
+          @y = @y - 1
+      end
+    end
+
   end
 end

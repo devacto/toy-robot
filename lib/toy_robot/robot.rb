@@ -3,15 +3,13 @@ require 'board'
 module ToyRobot
   class Robot
 
-    # robot has a board
-    attr_reader :board
+    # each robot has a board
+    attr_accessor :board
 
     # 3 robot attributes: x, y coordinates and direction
     attr_accessor :x, :y, :direction
 
-    BOARD_SIZE = 5
-
-    def initialize
+    def initialize(board)
       @board = board
     end
 

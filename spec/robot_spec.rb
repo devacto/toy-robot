@@ -2,12 +2,16 @@ require 'spec_helper'
 
 describe Robot do
 
+  before do
+    @board = Board.new(5)
+    @robot = Robot.new(@board)
+  end
+
   describe '#place' do
 
     context 'after place' do
 
       before do
-        @robot = Robot.new
         @robot.place(1, 5, 'NORTH')
       end
 
@@ -31,7 +35,6 @@ describe Robot do
     context 'from north' do
 
       before do
-        @robot = Robot.new
         @robot.direction = :north
         @robot.left
       end
@@ -45,7 +48,6 @@ describe Robot do
     context 'from west' do
 
       before do
-        @robot = Robot.new
         @robot.direction = :west
         @robot.left
       end
@@ -59,7 +61,6 @@ describe Robot do
     context 'from south' do
 
       before do
-        @robot = Robot.new
         @robot.direction = :south
         @robot.left
       end
@@ -73,7 +74,6 @@ describe Robot do
     context 'from east' do
 
       before do
-        @robot = Robot.new
         @robot.direction = :east
         @robot.left
       end
@@ -91,7 +91,6 @@ describe Robot do
     context 'from north' do
 
       before do
-        @robot = Robot.new
         @robot.direction = :north
         @robot.right
       end
@@ -105,7 +104,6 @@ describe Robot do
     context 'from east' do
 
       before do
-        @robot = Robot.new
         @robot.direction = :east
         @robot.right
       end
@@ -119,7 +117,6 @@ describe Robot do
     context 'from south' do
 
       before do
-        @robot = Robot.new
         @robot.direction = :south
         @robot.right
       end
@@ -133,7 +130,6 @@ describe Robot do
     context 'from west' do
 
       before do
-        @robot = Robot.new
         @robot.direction = :west
         @robot.right
       end
@@ -151,7 +147,6 @@ describe Robot do
     context 'currently facing west' do
 
       before do
-        @robot = Robot.new
         @robot.place(2, 2, 'WEST')
         @robot.move
       end
@@ -172,7 +167,6 @@ describe Robot do
     context 'currently facing east' do
 
       before do
-        @robot = Robot.new
         @robot.place(2, 2, 'EAST')
         @robot.move
       end
@@ -193,7 +187,6 @@ describe Robot do
     context 'currently facing north' do
 
       before do
-        @robot = Robot.new
         @robot.place(2, 2, 'NORTH')
         @robot.move
       end
@@ -214,7 +207,6 @@ describe Robot do
     context 'currently facing south' do
 
       before do
-        @robot = Robot.new
         @robot.place(2, 2, 'SOUTH')
         @robot.move
       end
@@ -231,13 +223,22 @@ describe Robot do
         expect(@robot.direction).to eq :south
       end
     end
+
+    context 'beyond board size' do
+
+      before do
+        @robot.x = 4
+        @robot.y = 4
+        @robot.direction = :north
+      end
+
+    end
   end
 
   describe '#report' do
 
     context 'straight after being places' do
       before do
-        @robot = Robot.new
         @robot.place(2, 2, 'NORTH')
       end
 

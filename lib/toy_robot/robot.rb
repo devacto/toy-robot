@@ -1,10 +1,19 @@
+require 'board'
+
 module ToyRobot
   class Robot
+
+    # robot has a board
+    attr_reader :board
 
     # 3 robot attributes: x, y coordinates and direction
     attr_accessor :x, :y, :direction
 
     BOARD_SIZE = 5
+
+    def initialize
+      @board = board
+    end
 
     def place(x, y, dir)
       @x = x
@@ -49,6 +58,10 @@ module ToyRobot
         when :south
           @y = @y - 1
       end
+    end
+
+    def report
+      return "#{@x},#{@y},#{@direction.upcase}"
     end
 
   end

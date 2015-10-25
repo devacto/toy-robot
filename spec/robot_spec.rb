@@ -231,6 +231,20 @@ describe Robot do
         expect(@robot.direction).to eq :south
       end
     end
+  end
+
+  describe '#report' do
+
+    context 'straight after being places' do
+      before do
+        @robot = Robot.new
+        @robot.place(2, 2, 'NORTH')
+      end
+
+      it 'gives out correct information' do
+        expect(@robot.report).to eq '2,2,NORTH'
+      end
+    end
 
   end
 

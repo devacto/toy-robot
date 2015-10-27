@@ -17,9 +17,7 @@ module ToyRobot
         @application = ToyRobot::Application.new
         instructions = read_from_file(options[:file])
 
-        # @application.parse(instructions)
         puts @application.parse(instructions)
-
       end
 
       default_task :execute

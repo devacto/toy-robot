@@ -230,6 +230,13 @@ describe Robot do
         @robot.x = 4
         @robot.y = 4
         @robot.direction = :north
+        @robot.move
+      end
+
+      it 'ignores the command' do
+        expect(@robot.x).to eq 4
+        expect(@robot.y).to eq 4
+        expect(@robot.direction).to eq :north
       end
 
     end

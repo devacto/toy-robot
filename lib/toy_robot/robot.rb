@@ -48,19 +48,47 @@ module ToyRobot
     def move
       case @direction
         when :west
-          @x = @x - 1
+          @x = conditionally_decrease(@x)
         when :east
-          @x = @x + 1
+          @x = conditionally_increment(@x)
         when :north
-          @y = @y + 1
+          @y = conditionally_increment(@y)
         when :south
-          @y = @y - 1
+          @y = conditionally_decrease(@y)
       end
     end
 
     def report
       return "#{@x},#{@y},#{@direction.upcase}"
     end
+
+    private
+
+    def beyond_boundary(value)
+      if value > (@board.size - 1) || value < 0
+        return true
+      else
+        return false
+      end
+    end
+
+
+      def conditionally_increment(value)
+        if beyond_boundary(value + 1)
+          return value
+        else
+          return value + 1
+        end
+      end
+
+      def conditionally_decrease(value)
+        if beyond_boundary(value + 1)
+          return value
+        else
+          return value - 1
+        end
+      end
+
 
   end
 end

@@ -48,13 +48,13 @@ module ToyRobot
     def move
       case @direction
         when :west
-          @x = conditionally_decrease(@x)
+          @x = conditionally_decrease(@x.to_i)
         when :east
-          @x = conditionally_increment(@x)
+          @x = conditionally_increment(@x.to_i)
         when :north
-          @y = conditionally_increment(@y)
+          @y = conditionally_increment(@y.to_i)
         when :south
-          @y = conditionally_decrease(@y)
+          @y = conditionally_decrease(@y.to_i)
       end
     end
 

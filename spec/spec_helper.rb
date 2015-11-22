@@ -1,13 +1,14 @@
+require 'codeclimate-test-reporter'
 require 'rspec'
-
 require 'simplecov'
-
-SimpleCov.start
-
 require 'toy_robot'
 
+SimpleCov.start do
+  formatter SimpleCov::Formatter::MultiFormatter[
+                SimpleCov::Formatter::HTMLFormatter,
+                CodeClimate::TestReporter::Formatter
+            ]
+end
+
+
 include ToyRobot
-
-require 'codeclimate-test-reporter'
-
-CodeClimate::TestReporter::Start

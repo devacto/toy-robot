@@ -13,5 +13,5 @@ group :development do
 end
 
 group :test do
-  gem 'codeclimate-test-reporter', '~> 0.4.8'
+  gem 'codeclimate-test-reporter', '~> 0.4.8', require: nil
 end

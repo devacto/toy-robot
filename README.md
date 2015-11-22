@@ -1,8 +1,8 @@
 # trobot
-Toy robot simulation in Ruby. For the Golang version see grobot.
+Toy robot simulation in Ruby.
 
 ## Usage
-`./bin/trobot -f [filename]`
+`./bin/trobot -f [path/to/file]`
 * One file can only contain one toy robot.
 * Runs commands from a file. Once it sees a `REPORT`, it will exit and display output.
 * If it does not see a `REPORT` and has reached the end of the file, it will display output.
@@ -20,7 +20,6 @@ Toy robot simulation in Ruby. For the Golang version see grobot.
 * RSpec for tests
 * SimpleCov for code test coverage.
 * Code Climate for code quality metrics.
-* Reek for code smell.
 
 ## Build
 * Travis for CI.
@@ -79,6 +78,3 @@ MOVE
 REPORT
 ```
 Output: `3,3,NORTH`
-
-### Deliverables
-The source files, the test data and any test code.

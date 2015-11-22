@@ -1,4 +1,4 @@
-# trobot
+# trobot [![Build Status](https://travis-ci.org/devacto/toy-robot.svg?branch=master)](https://travis-ci.org/devacto/toy-robot)
 Toy robot simulation in Ruby.
 
 ## Usage

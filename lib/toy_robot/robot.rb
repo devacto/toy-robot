@@ -72,23 +72,21 @@ module ToyRobot
       end
     end
 
-
-      def conditionally_increment(value)
-        if beyond_boundary(value + 1)
-          return value
-        else
-          return value + 1
-        end
+    def conditionally_increment(value)
+      if beyond_boundary(value + 1)
+        return value
+      else
+        return value + 1
       end
+    end
 
-      def conditionally_decrease(value)
-        if beyond_boundary(value + 1)
-          return value
-        else
-          return value - 1
-        end
+    def conditionally_decrease(value)
+      if beyond_boundary(value + 1)
+        return value
+      else
+        return value - 1
       end
-
+    end
 
   end
 end

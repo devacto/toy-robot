@@ -1,4 +1,4 @@
-# trobot [![Build Status](https://travis-ci.org/devacto/toy-robot.svg?branch=master)](https://travis-ci.org/devacto/toy-robot)
+# trobot [![Build Status](https://travis-ci.org/devacto/toy-robot.svg?branch=master)](https://travis-ci.org/devacto/toy-robot) [![Code Climate](https://codeclimate.com/github/devacto/toy-robot/badges/gpa.svg)](https://codeclimate.com/github/devacto/toy-robot)
 Toy robot simulation in Ruby.
 
 ## Usage

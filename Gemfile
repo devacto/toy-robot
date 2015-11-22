@@ -11,3 +11,7 @@ group :development do
   gem 'pry', '~> 0.10.3'
   gem 'simplecov', require: false
 end
+
+group :test do
+  gem 'codeclimate-test-reporter', '~> 0.4.8'
+end
